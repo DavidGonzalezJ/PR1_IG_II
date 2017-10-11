@@ -11,7 +11,8 @@ public:
 	virtual ~Objeto3D()
 	{
 	}
-	virtual void dibuja();
+	virtual void dibuja() = 0;
 	TAfin* mt;
+	PuntoVector3D* color;
 };
 

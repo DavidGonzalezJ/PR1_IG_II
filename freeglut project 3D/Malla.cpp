@@ -38,6 +38,7 @@ int Malla::getNumeroCaras() {
 }
 
 void Malla::dibuja() {
+	glColor3f(color->getX(), color->getY(), color->getZ());
 	for (int i = 0; i<numeroCaras; i++) {
 		glBegin(GL_POLYGON);
 		for (int j = 0; j<cara[i]->getNumeroVertices(); j++) {

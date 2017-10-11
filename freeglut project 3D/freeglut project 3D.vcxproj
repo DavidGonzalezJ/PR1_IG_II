@@ -67,17 +67,27 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="Cara.cpp" />
+    <ClCompile Include="Coche.cpp" />
+    <ClCompile Include="Cubo.cpp" />
     <ClCompile Include="main.cpp" />
     <ClCompile Include="Malla.cpp" />
+    <ClCompile Include="ObjetoCompuesto.cpp" />
+    <ClCompile Include="ObjetoCuadrico.cpp" />
     <ClCompile Include="PuntoVector3D.cpp" />
+    <ClCompile Include="Rueda.cpp" />
     <ClCompile Include="TAfin.cpp" />
     <ClCompile Include="VerticeNormal.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Cara.h" />
+    <ClInclude Include="Coche.h" />
+    <ClInclude Include="Cubo.h" />
     <ClInclude Include="Malla.h" />
     <ClInclude Include="Objeto3D.h" />
+    <ClInclude Include="ObjetoCompuesto.h" />
+    <ClInclude Include="ObjetoCuadrico.h" />
     <ClInclude Include="PuntoVector3D.h" />
+    <ClInclude Include="Rueda.h" />
     <ClInclude Include="TAfin.h" />
     <ClInclude Include="VerticeNormal.h" />
   </ItemGroup>
