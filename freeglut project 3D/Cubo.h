@@ -3,14 +3,13 @@
 class Cubo : public Malla
 {
 public:
-	Cubo() : size(1){};
-	Cubo(GLfloat size) :size(size){};
+	Cubo();
 	virtual ~Cubo();
 	virtual void dibuja();
 	void cambiaSoliAWire(){
 		solido = !solido;
 	}
 	bool solido = true;
-	GLfloat size;
+	//GLfloat size;
 };
 
