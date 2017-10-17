@@ -7,6 +7,7 @@
 
 #include <iostream>
 using namespace std;
+#include "Cubo.h"
 
 // Freeglut parameters
 // Flag telling us to keep processing events
@@ -29,7 +30,7 @@ GLfloat anguloGiro = 0;
 GLfloat giroTecla = 0;
 bool noriaB = false;
 GLUquadricObj* q;
-
+Cubo cubito;
 void buildSceneObjects() {	 
     angX=0.0f;
     angY=0.0f;
@@ -165,8 +166,10 @@ void display(void) {
 			glVertex3f(0, 0, 20);	     
 		glEnd();
 		 		
-		// Drawing the scene	 		 
+		// Drawing the scene
+
 		glColor3f(1.0, 1.0, 1.0);
+		cubito.dibuja();
 		if (noriaB)
 			noria();
 		else aspaNoria();

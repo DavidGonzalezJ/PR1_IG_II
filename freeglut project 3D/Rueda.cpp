@@ -1,5 +1,5 @@
 #include "Rueda.h"
-#include "ObjetoCuadrico.h"
+
 
 Rueda::Rueda()
 {
