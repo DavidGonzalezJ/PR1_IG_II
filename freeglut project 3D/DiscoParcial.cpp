@@ -1,7 +1,7 @@
 #include "DiscoParcial.h"
 
 
-DiscoParcial::DiscoParcial() : outerRadius(1), innerRadius(1), slices(20),
+DiscoParcial::DiscoParcial() : outerRadius(1), innerRadius(0.5), slices(20),
 	rings(20), startAngle(0), sweepAngle(90)
 {
 }
@@ -15,7 +15,12 @@ DiscoParcial::~DiscoParcial()
 {
 }
 void DiscoParcial::dibuja(){
+	glMatrixMode(GL_MODELVIEW);
+	glPushMatrix();
+	//Cargar m como matriz actual de modelado-vista
+	glMultMatrixf(mt->m);
 	glColor3f(color->getX(), color->getY(), color->getZ());
 	gluPartialDisk(q, innerRadius, outerRadius, slices, rings,
 		startAngle, sweepAngle);
+	glPopMatrix();
 };

@@ -6,6 +6,8 @@ public:
 
 	Objeto3D()
 	{
+		mt = new TAfin();
+		color = new PuntoVector3D(0, 0, 0.5, 0);
 	}
 
 	virtual ~Objeto3D()

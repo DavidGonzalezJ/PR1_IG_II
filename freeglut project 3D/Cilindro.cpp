@@ -12,7 +12,12 @@ Cilindro::~Cilindro()
 {
 }
 void Cilindro::dibuja(){
+	glMatrixMode(GL_MODELVIEW);
+	glPushMatrix();
+	glMultMatrixf(mt->m);
+
 	glColor3f(color->getX(), color->getY(), color->getZ());
 	gluCylinder(q, baseRadius, topRadius, height, slices,
 		stacks);
+	glPopMatrix();
 };

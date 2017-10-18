@@ -7,7 +7,7 @@
 
 #include <iostream>
 using namespace std;
-#include "Cubo.h"
+#include "Escena.h"
 
 // Freeglut parameters
 // Flag telling us to keep processing events
@@ -30,12 +30,14 @@ GLfloat anguloGiro = 0;
 GLfloat giroTecla = 0;
 bool noriaB = false;
 GLUquadricObj* q;
-Cubo cubito;
+Escena* escena;
+
 void buildSceneObjects() {	 
     angX=0.0f;
     angY=0.0f;
     angZ=0.0f;
 	q = gluNewQuadric();
+	escena = new Escena();
 }
 
 void aspa(){
@@ -57,7 +59,7 @@ void cabina(){
 
 void aspaNoria(){
 	//glTranslatef(), glRotatef(),
-	//	glScalef(), junto con el comando glutSolidCube(1)
+	//glScalef(), junto con el comando glutSolidCube(1)
 	glPushMatrix();
 	glRotatef(anguloGiro + giroTecla, 0, 0, 1);
 	glTranslatef(4, 0, 1);
@@ -167,12 +169,8 @@ void display(void) {
 		glEnd();
 		 		
 		// Drawing the scene
+		escena->dibuja();
 
-		glColor3f(1.0, 1.0, 1.0);
-		cubito.dibuja();
-		if (noriaB)
-			noria();
-		else aspaNoria();
 	glPopMatrix();
  
 	glFlush();
@@ -221,6 +219,7 @@ void key(unsigned char key, int x, int y){
 		case 'x': angY=angY-5; break;
 		case 'd': angZ=angZ+5; break;
 		case 'c': angZ=angZ-5; break;
+		case 't': escena->mt->traslada(new PuntoVector3D(1, 2, 0, 1)); break;
 		case '7': 
 			noriaB = false;
 			giroTecla += 10; break;

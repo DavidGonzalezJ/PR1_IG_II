@@ -72,6 +72,7 @@
     <ClCompile Include="Cubo.cpp" />
     <ClCompile Include="Disco.cpp" />
     <ClCompile Include="DiscoParcial.cpp" />
+    <ClCompile Include="Escena.cpp" />
     <ClCompile Include="Esfera.cpp" />
     <ClCompile Include="main.cpp" />
     <ClCompile Include="Malla.cpp" />
@@ -88,6 +89,7 @@
     <ClInclude Include="Cubo.h" />
     <ClInclude Include="Disco.h" />
     <ClInclude Include="DiscoParcial.h" />
+    <ClInclude Include="Escena.h" />
     <ClInclude Include="Esfera.h" />
     <ClInclude Include="Malla.h" />
     <ClInclude Include="Objeto3D.h" />

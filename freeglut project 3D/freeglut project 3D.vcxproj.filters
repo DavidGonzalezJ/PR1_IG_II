@@ -57,6 +57,9 @@
     <ClCompile Include="Cilindro.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="Escena.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Malla.h">
@@ -102,6 +105,9 @@
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="Cilindro.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Escena.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>

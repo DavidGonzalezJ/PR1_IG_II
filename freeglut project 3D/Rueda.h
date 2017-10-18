@@ -9,5 +9,6 @@ class Rueda :
 public:
 	Rueda();
 	~Rueda();
+
 };
 

@@ -1,5 +1,5 @@
 #include "Cubo.h"
-Cubo::Cubo(){
+Cubo::Cubo(int tam) :tam(tam){
 	numeroVertices = 8;
 	vertice = new PuntoVector3D*[numeroVertices];
 	numeroNormales = 8;
@@ -9,14 +9,14 @@ Cubo::Cubo(){
 	//modo = false;
 
 	// Vértices  
-	vertice[0] = new PuntoVector3D(-0.5f, 0.5f, 0.5f, 1);
-	vertice[1] = new PuntoVector3D(-0.5f, -0.5f, 0.5f, 1);
-	vertice[2] = new PuntoVector3D(0.5f, -0.5f, 0.5f, 1);
-	vertice[3] = new PuntoVector3D(0.5f, 0.5f, 0.5f, 1);
-	vertice[4] = new PuntoVector3D(-0.5f, 0.5f, -0.5f, 1);
-	vertice[5] = new PuntoVector3D(-0.5f, -0.5f,-0.5f, 1);
-	vertice[6] = new PuntoVector3D(0.5f, -0.5f, -0.5f, 1);
-	vertice[7] = new PuntoVector3D(0.5f, 0.5f, -0.5f, 1);
+	vertice[0] = new PuntoVector3D(-0.5f*tam, 0.5f*tam, 0.5f*tam, 1);
+	vertice[1] = new PuntoVector3D(-0.5f*tam, -0.5f*tam, 0.5f*tam, 1);
+	vertice[2] = new PuntoVector3D(0.5f*tam, -0.5f*tam, 0.5f*tam, 1);
+	vertice[3] = new PuntoVector3D(0.5f*tam, 0.5f*tam, 0.5f*tam, 1);
+	vertice[4] = new PuntoVector3D(-0.5f*tam, 0.5f*tam, -0.5f*tam, 1);
+	vertice[5] = new PuntoVector3D(-0.5f*tam, -0.5f*tam, -0.5f*tam, 1);
+	vertice[6] = new PuntoVector3D(0.5f*tam, -0.5f*tam, -0.5f*tam, 1);
+	vertice[7] = new PuntoVector3D(0.5f*tam, 0.5f*tam, -0.5f*tam, 1);
 
 	// Normales  
 	normal[0] = new PuntoVector3D(0, 0, 1, 0);
@@ -82,5 +82,10 @@ Cubo::~Cubo()
 }
 
 void Cubo::dibuja(){
+	glMatrixMode(GL_MODELVIEW);
+	glPushMatrix();
+	//Cargar m como matriz actual de modelado-vista
+	glMultMatrixf(mt->m);
 	Malla::dibuja();
+	glPopMatrix();
 }

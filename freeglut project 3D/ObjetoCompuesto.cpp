@@ -3,6 +3,8 @@
 
 ObjetoCompuesto::ObjetoCompuesto()
 {
+	hijos = new Objeto3D*[1000000];
+	numHijos = 0;
 }
 
 
@@ -15,7 +17,11 @@ void ObjetoCompuesto::dibuja() {
 	glMatrixMode(GL_MODELVIEW);
 	glPushMatrix();
 	glMultMatrixf(this->mt->m);
-	for (int i = 0; i<numHijos; i++)
+	for (int i = 0; i < numHijos; i++)
 		hijos[i]->dibuja();
 	glPopMatrix();
+}
+void ObjetoCompuesto::introduceObjeto(Objeto3D* hijo){
+	hijos[numHijos] = hijo;
+	numHijos++;
 }
