@@ -66,9 +66,11 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="Arbol.cpp" />
     <ClCompile Include="Cara.cpp" />
     <ClCompile Include="Cilindro.cpp" />
     <ClCompile Include="Coche.cpp" />
+    <ClCompile Include="copaDoble.cpp" />
     <ClCompile Include="Cubo.cpp" />
     <ClCompile Include="Disco.cpp" />
     <ClCompile Include="DiscoParcial.cpp" />
@@ -83,9 +85,11 @@
     <ClCompile Include="VerticeNormal.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="Arbol.h" />
     <ClInclude Include="Cara.h" />
     <ClInclude Include="Cilindro.h" />
     <ClInclude Include="Coche.h" />
+    <ClInclude Include="copaDoble.h" />
     <ClInclude Include="Cubo.h" />
     <ClInclude Include="Disco.h" />
     <ClInclude Include="DiscoParcial.h" />
