@@ -51,3 +51,13 @@ Coche::Coche() {
 Coche::~Coche()
 {
 }
+
+void Coche::digievolucion()
+{
+	PuntoVector3D aux = { 1,0,0,0 };
+	hijos[0]->color = &aux;
+	aux = { 2,2,2,1 };
+	mt->escala(&aux);
+	aux = { 0,0.25,0,1 };
+	mt->traslada(&aux);
+}

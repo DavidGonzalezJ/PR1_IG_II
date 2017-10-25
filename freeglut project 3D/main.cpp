@@ -8,6 +8,7 @@
 #include <iostream>
 using namespace std;
 #include "Escena.h"
+#include <time.h>
 
 // Freeglut parameters
 // Flag telling us to keep processing events
@@ -38,6 +39,7 @@ void buildSceneObjects() {
     angZ=0.0f;
 	q = gluNewQuadric();
 	escena = new Escena();
+	srand(time(0));
 }
 
 void aspa(){
@@ -219,13 +221,22 @@ void key(unsigned char key, int x, int y){
 		case 'x': angY=angY-5; break;
 		case 'd': angZ=angZ+5; break;
 		case 'c': angZ=angZ-5; break;
-		case 't': escena->mt->traslada(new PuntoVector3D(1, 2, 0, 1)); break;
+		//case 't': escena->mt->traslada(new PuntoVector3D(1, 2, 0, 1)); break;
 		case '7': 
 			noriaB = false;
 			giroTecla += 10; break;
 		case '8':
 			noriaB = true;
 			giroTecla += 10; break;
+		/*vbKeyLeft	37	LEFT ARROW key
+		vbKeyUp	38	UP ARROW key
+		vbKeyRight	39	RIGHT ARROW key
+		vbKeyDown	40	DOWN ARROW key*/
+		case 'i': escena->mueveCoche(true);break;
+		case 'k': escena->mueveCoche(false); break;
+		case 'j': escena->giraCoche(false); break;
+		case 'l': escena->giraCoche(true); break;
+
 		default:
 			need_redisplay = false;
 			break;

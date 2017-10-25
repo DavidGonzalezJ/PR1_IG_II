@@ -6,5 +6,6 @@ class Coche :
 public:
 	Coche();
 	virtual ~Coche();
+	void digievolucion();
 };
 

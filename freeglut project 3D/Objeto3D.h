@@ -8,6 +8,7 @@ public:
 	{
 		mt = new TAfin();
 		color = new PuntoVector3D(0, 0, 0.5, 0);
+		activo = true;
 	}
 
 	virtual ~Objeto3D()
@@ -16,5 +17,6 @@ public:
 	virtual void dibuja() = 0;
 	TAfin* mt;
 	PuntoVector3D* color;
+	bool activo;
 };
 

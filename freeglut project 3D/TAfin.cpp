@@ -48,3 +48,23 @@ void TAfin::rota(PuntoVector3D* a, int ang) {
 	glPopMatrix();
 	postMultiplica(m1);
 }
+
+void TAfin::escala(PuntoVector3D * v)
+{
+	glMatrixMode(GL_MODELVIEW);
+	glPushMatrix();
+	glLoadIdentity();
+	glScalef(v->getX(), v->getY(), v->getZ());
+	GLfloat m1[16];
+	//Dejar la matriz actual de modelado-vista en m1
+	//Los 16 datos están enumerados por columnas
+	glGetFloatv(GL_MODELVIEW_MATRIX, m1);
+	glPopMatrix();
+	postMultiplica(m1);
+}
+
+PuntoVector3D TAfin::damePos()
+{
+	PuntoVector3D aux = { m[12],m[13],m[14],0 };
+	return aux;
+}

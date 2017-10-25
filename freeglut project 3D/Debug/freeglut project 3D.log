@@ -1,8 +1,5 @@
-﻿  Arbol.cpp
+﻿  Escena.cpp
 c:\users\vixad\searches\escritorio\ig2\pr1_ig_ii\freeglut project 3d\objetocuadrico.h(11): warning C4150: eliminación de puntero a tipo 'GLUquadric' incompleto; no se ha llamado a un destructor
   c:\program files (x86)\windows kits\8.1\include\um\gl\glu.h(163): note: vea la declaración de 'GLUquadric'
-c:\users\vixad\searches\escritorio\ig2\pr1_ig_ii\freeglut project 3d\arbol.cpp(12): warning C4305: 'argumento': truncamiento de 'double' a 'GLfloat'
-c:\users\vixad\searches\escritorio\ig2\pr1_ig_ii\freeglut project 3d\arbol.cpp(16): warning C4305: 'argumento': truncamiento de 'double' a 'GLfloat'
-c:\users\vixad\searches\escritorio\ig2\pr1_ig_ii\freeglut project 3d\arbol.cpp(25): warning C4305: 'argumento': truncamiento de 'double' a 'GLfloat'
   freeglut project 3D.vcxproj -> C:\Users\vixad\Searches\Escritorio\IG2\PR1_IG_II\Debug\freeglut project 3D.exe
   freeglut project 3D.vcxproj -> C:\Users\vixad\Searches\Escritorio\IG2\PR1_IG_II\Debug\freeglut project 3D.pdb (Full PDB)

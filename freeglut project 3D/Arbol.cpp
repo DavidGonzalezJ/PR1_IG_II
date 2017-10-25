@@ -28,7 +28,7 @@ Arbol::Arbol(TipoArbol tipo)
 	aux={ 0, 3, 0, 0 };
 	hijos[1]->mt->traslada(&aux);
 
-	//Parche guarro para el abeto (porque se traslada mal al haberlo rotado)
+	//Para que la copa del abeto se ponga donde debe
 	if (tipo == TipoArbol::Abeto) {
 		aux = { 1,0,0,0 };
 		hijos[1]->mt->rota(&aux, -90);
