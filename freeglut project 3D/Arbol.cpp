@@ -16,22 +16,22 @@ Arbol::Arbol(TipoArbol tipo)
 
 	//COPAS
 	if (tipo == TipoArbol::Abeto) {
-		this->introduceObjeto(new CopaSimple(false, dameRandom(0.5, 3)));
+		this->introduceObjeto(new CopaSimple(false, dameRandom(1, 3)));
 		hijos[1]->color = new PuntoVector3D(0, 0.7, 0.4, 0);
 
 	}
 	else if (tipo == TipoArbol::Roble) {
-		this->introduceObjeto(new CopaSimple(true, dameRandom(0.5, 3)));
+		this->introduceObjeto(new CopaSimple(true, dameRandom(1, 3)));
 
 	}
 	else if (tipo == TipoArbol::Pino){
-		this->introduceObjeto(new copaDoble(false, dameRandom(0.5, 3), dameRandom(0.5, 3)));
+		this->introduceObjeto(new copaDoble(false, dameRandom(1, 3), dameRandom(1, 3)));
 	}
 	else //ÁLAMO
-		this->introduceObjeto(new copaDoble(true, dameRandom(0.5, 3), dameRandom(0.5, 3)));
-
-		aux = { 0, troncoAl, 0, 0 };
-		hijos[1]->mt->traslada(&aux);
+		this->introduceObjeto(new copaDoble(true, dameRandom(1, 3), dameRandom(1, 3)));
+	troncoAl -= 0.25;
+	aux = { 0, troncoAl, 0, 0 };
+	hijos[1]->mt->traslada(&aux);
 }
 
 

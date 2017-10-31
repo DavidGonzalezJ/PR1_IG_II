@@ -6,24 +6,24 @@
 //#include <GL/glut.h>
 
 #include <iostream>
-using namespace std;
 #include "Escena.h"
 #include <time.h>
 
+using namespace std;
 // Freeglut parameters
 // Flag telling us to keep processing events
 // bool continue_in_main_loop= true; //(**)
 
 // Viewport size
-int WIDTH= 500, HEIGHT= 500;
+int WIDTH = 500, HEIGHT = 500;
 
 // Viewing frustum parameters
-GLdouble xRight=10, xLeft=-xRight, yTop=10, yBot=-yTop, N=1, F=1000;
+GLdouble xRight = 10, xLeft = -xRight, yTop = 10, yBot = -yTop, N = 1, F = 1000;
 
 // Camera parameters
-GLdouble eyeX=100.0, eyeY=100.0, eyeZ=100.0;
-GLdouble lookX=0.0, lookY=0.0, lookZ=0.0;
-GLdouble upX=0, upY=1, upZ=0;
+GLdouble eyeX = 0.0, eyeY = 100.0, eyeZ = 0;
+GLdouble lookX = 0.0, lookY = 0.0, lookZ = 0.0;
+GLdouble upX = -1, upY = 0, upZ = 0;
 
 // Scene variables
 GLfloat angX, angY, angZ; 
@@ -32,6 +32,7 @@ GLfloat giroTecla = 0;
 bool noriaB = false;
 GLUquadricObj* q;
 Escena* escena;
+
 
 void buildSceneObjects() {	
 	srand(static_cast <unsigned> (time(0)));
@@ -45,7 +46,6 @@ void buildSceneObjects() {
 void aspa(){
 	glColor3f(0.8,0.8,0.8);
 	glScalef(8, 0.3, 0.2);
-
 	glutSolidCube(1);
 }
 
@@ -60,8 +60,7 @@ void cabina(){
 }
 
 void aspaNoria(){
-	//glTranslatef(), glRotatef(),
-	//glScalef(), junto con el comando glutSolidCube(1)
+
 	glPushMatrix();
 	glRotatef(anguloGiro + giroTecla, 0, 0, 1);
 	glTranslatef(4, 0, 1);
@@ -97,15 +96,17 @@ void noria(){
 	glPopMatrix();
 }
 
-void tronco(){
-	glColor3f(0.8, 0.8, 0.8);
-	gluCylinder(q, 1 , 0.5, 5, 20, 20);
+void actualizaCamara() {
+	glMatrixMode(GL_MODELVIEW);
+	glLoadIdentity();
+	PuntoVector3D aux = escena->damePosCoche();
+	eyeX = aux.getX();
+	eyeZ = aux.getZ();
+	lookX = aux.getX();
+	lookZ = aux.getZ();
+
+	gluLookAt(eyeX, eyeY, eyeZ, lookX, lookY, lookZ, upX, upY, upZ);
 }
-
-/*Los abetos tienen una copa cónica, los pinos tienen
-dos copas cónicas, superpuestas; los robles también tienen una copa esférica y los
-álamos tienen dos.*/
-
 
 void initGL() {	 		 
 	glClearColor(0.6f,0.7f,0.8f,1.0);
@@ -221,33 +222,42 @@ void key(unsigned char key, int x, int y){
 		case 'x': angY=angY-5; break;
 		case 'd': angZ=angZ+5; break;
 		case 'c': angZ=angZ-5; break;
-		//case 't': escena->mt->traslada(new PuntoVector3D(1, 2, 0, 1)); break;
+
 		case '7': 
 			noriaB = false;
 			giroTecla += 10; break;
 		case '8':
 			noriaB = true;
 			giroTecla += 10; break;
-		/*vbKeyLeft	37	LEFT ARROW key
-		vbKeyUp	38	UP ARROW key
-		vbKeyRight	39	RIGHT ARROW key
-		vbKeyDown	40	DOWN ARROW key*/
-		case 'i': escena->mueveCoche(true);break;
-		case 'k': escena->mueveCoche(false); break;
-		case 'j': escena->giraCoche(false); break;
-		case 'l': escena->giraCoche(true); break;
+		case 'i': 
+			escena->mueveCoche(true);
+			break;
+		case 'k':
+			escena->mueveCoche(false);
+			break;
+		case 'j': 
+			if (!escena->finPartida())
+				escena->giraCoche(false); break;
+		case 'l':
+			if (!escena->finPartida())
+				escena->giraCoche(true); break;
 
 		default:
 			need_redisplay = false;
 			break;
 	}
 
-	if (need_redisplay)
+	if (need_redisplay) {
 		glutPostRedisplay();
+		actualizaCamara();
+	}
 }
 
 int main(int argc, char *argv[]){
 	cout<< "Starting console..." << endl;
+	cout << "Para mover el coche: \nDelante: i \nAtras: k" << endl;
+	cout << "Para girar el coche: \nDerecha: l \nIzquierda: j" << endl;
+	cout << "-----" << endl;
 
 	int my_window; // my window's identifier
 

@@ -16,16 +16,16 @@ copaDoble::copaDoble(bool esf, GLfloat tam1, GLfloat tam2){
 	if (esf){
 		this->introduceObjeto(new Esfera(mayor, 20, 20));
 		this->introduceObjeto(new Esfera(menor, 20, 20));
-		PuntoVector3D aux(0.5*menor, menor, 0, 0);
+		PuntoVector3D aux(-1.5*menor, menor, 0, 0);
 		hijos[0]->mt->traslada(&aux);
 		GLfloat mult = 0.5*menor;
 		aux = { mult, menor, 0, 0 };
 		hijos[1]->mt->traslada(&aux);
 	}
 	else{
-		this->introduceObjeto(new Cilindro(1.5, 0, 4, 20, 20));
-		this->introduceObjeto(new Cilindro(1.5, 0, 4, 20, 20));
-		PuntoVector3D aux(0, 1, 0, 0);
+		this->introduceObjeto(new Cilindro(menor, 0, mayor, 20, 20));
+		this->introduceObjeto(new Cilindro(menor, 0, mayor, 20, 20));
+		PuntoVector3D aux(0, mayor*0.75, 0, 0);
 		hijos[1]->mt->traslada(&aux);
 		aux = { 1, 0, 0, 0 };
 		hijos[0]->mt->rota(&aux, -90);

@@ -1,35 +1,9 @@
-﻿Build started 31/10/2017 13:42:11.
-     1>Project "C:\hlocal\PR1_IG_II\freeglut project 3D\freeglut project 3D.vcxproj" on node 2 (Build target(s)).
-     1>ClCompile:
-         C:\software\programacion\MSVStudio2013\VC\bin\CL.exe /c /IC:\hlocal\PR1_IG_II\freeglut\include\ /ZI /nologo /W3 /WX- /Od /Oy- /D _MBCS /Gm /EHsc /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Fo"Debug\\" /Fd"Debug\vc120.pdb" /Gd /TP /analyze- /errorReport:prompt copaDoble.cpp
-         copaDoble.cpp
-     1>c:\hlocal\pr1_ig_ii\freeglut project 3d\objetocuadrico.h(11): warning C4150: deletion of pointer to incomplete type 'GLUquadric'; no destructor called
-                 c:\program files (x86)\windows kits\8.1\include\um\gl\glu.h(158) : see declaration of 'GLUquadric'
-     1>c:\hlocal\pr1_ig_ii\freeglut project 3d\copadoble.cpp(6): warning C4305: 'argument' : truncation from 'double' to 'GLfloat'
-     1>c:\hlocal\pr1_ig_ii\freeglut project 3d\copadoble.cpp(19): warning C4244: 'argument' : conversion from 'double' to 'GLfloat', possible loss of data
-     1>c:\hlocal\pr1_ig_ii\freeglut project 3d\copadoble.cpp(21): warning C4244: 'initializing' : conversion from 'double' to 'GLfloat', possible loss of data
-       Link:
-         C:\software\programacion\MSVStudio2013\VC\bin\link.exe /ERRORREPORT:PROMPT /OUT:"C:\hlocal\PR1_IG_II\Debug\freeglut project 3D.exe" /INCREMENTAL /NOLOGO /LIBPATH:C:\hlocal\PR1_IG_II\freeglut\lib\ kernel32.lib user32.lib gdi32.lib winspool.lib comdlg32.lib advapi32.lib shell32.lib ole32.lib oleaut32.lib uuid.lib odbc32.lib odbccp32.lib /MANIFEST /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /manifest:embed /DEBUG /PDB:"C:\hlocal\PR1_IG_II\Debug\freeglut project 3D.pdb" /TLBID:1 /DYNAMICBASE /NXCOMPAT /IMPLIB:"C:\hlocal\PR1_IG_II\Debug\freeglut project 3D.lib" /MACHINE:X86 Debug\Arbol.obj
-         Debug\Cara.obj
-         Debug\Cilindro.obj
-         Debug\Coche.obj
-         Debug\copaDoble.obj
-         Debug\CopaSimple.obj
-         Debug\Cubo.obj
-         Debug\Disco.obj
-         Debug\DiscoParcial.obj
-         Debug\Escena.obj
-         Debug\Esfera.obj
-         Debug\main.obj
-         Debug\Malla.obj
-         Debug\ObjetoCompuesto.obj
-         Debug\PuntoVector3D.obj
-         Debug\Rueda.obj
-         Debug\TAfin.obj
-         Debug\VerticeNormal.obj
-         freeglut project 3D.vcxproj -> C:\hlocal\PR1_IG_II\Debug\freeglut project 3D.exe
-     1>Done Building Project "C:\hlocal\PR1_IG_II\freeglut project 3D\freeglut project 3D.vcxproj" (Build target(s)).
-
-Build succeeded.
-
-Time Elapsed 00:00:00.46
+﻿  main.cpp
+c:\users\patricia\documents\universidad\ucm 3\ig ii\pr1_ig_ii\freeglut project 3d\main.cpp(47): warning C4305: 'argumento': truncamiento de 'double' a 'GLfloat'
+c:\users\patricia\documents\universidad\ucm 3\ig ii\pr1_ig_ii\freeglut project 3d\main.cpp(48): warning C4305: 'argumento': truncamiento de 'double' a 'GLfloat'
+c:\users\patricia\documents\universidad\ucm 3\ig ii\pr1_ig_ii\freeglut project 3d\main.cpp(53): warning C4305: 'argumento': truncamiento de 'double' a 'GLfloat'
+c:\users\patricia\documents\universidad\ucm 3\ig ii\pr1_ig_ii\freeglut project 3d\main.cpp(56): warning C4305: 'argumento': truncamiento de 'double' a 'GLfloat'
+c:\users\patricia\documents\universidad\ucm 3\ig ii\pr1_ig_ii\freeglut project 3d\main.cpp(85): warning C4244: '=': conversión de 'int' a 'GLfloat'; posible pérdida de datos
+c:\users\patricia\documents\universidad\ucm 3\ig ii\pr1_ig_ii\freeglut project 3d\main.cpp(90): warning C4305: 'argumento': truncamiento de 'double' a 'GLfloat'
+  freeglut project 3D.vcxproj -> C:\Users\Patricia\Documents\UNIVERSIDAD\UCM 3\IG II\PR1_IG_II\Debug\freeglut project 3D.exe
+  freeglut project 3D.vcxproj -> C:\Users\Patricia\Documents\UNIVERSIDAD\UCM 3\IG II\PR1_IG_II\Debug\freeglut project 3D.pdb (Full PDB)
