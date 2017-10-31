@@ -18,5 +18,8 @@ public:
 	TAfin* mt;
 	PuntoVector3D* color;
 	bool activo;
+	GLfloat dameRandom(GLfloat max, GLfloat min) {
+		return min + static_cast <GLfloat> (rand()) / (static_cast <GLfloat> (RAND_MAX / (max - min)));
+	}
 };
 

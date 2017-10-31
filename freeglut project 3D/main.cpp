@@ -33,13 +33,13 @@ bool noriaB = false;
 GLUquadricObj* q;
 Escena* escena;
 
-void buildSceneObjects() {	 
+void buildSceneObjects() {	
+	srand(static_cast <unsigned> (time(0)));
     angX=0.0f;
     angY=0.0f;
     angZ=0.0f;
 	q = gluNewQuadric();
 	escena = new Escena();
-	srand(time(0));
 }
 
 void aspa(){

@@ -1,6 +1,9 @@
 #include "Escena.h"
 #include "Coche.h"
 #include "Arbol.h"
+#include "CopaSimple.h"
+#include "copaDoble.h"
+
 #include "Esfera.h"
 #include <iostream>
 
@@ -10,10 +13,21 @@
 
 Escena::Escena()
 {
-	this->introduceObjeto(new Coche());
+	//this->introduceObjeto(new Coche());
 	
-	hijos[0]->mt->traslada(new PuntoVector3D(0, 0.5, 0, 0));
-	creaBosque();
+	//hijos[0]->mt->traslada(new PuntoVector3D(0, 0.5, 0, 0));
+	//this->introduceObjeto(new Arbol(Alamo));
+	this->introduceObjeto(new copaDoble(true,  1, 2));
+	/*
+	this->introduceObjeto(new Arbol(Roble));
+	this->introduceObjeto(new Arbol(Pino));
+	this->introduceObjeto(new CopaSimple(false, 5));
+	this->introduceObjeto(new Arbol(Alamo));
+
+	for (int i = 1; i < 5; i++)
+		hijos[i]->mt->traslada(new PuntoVector3D(i*2, 0 , 2*i, 0));*/
+
+	//creaBosque();
 }
 
 

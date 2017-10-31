@@ -19,7 +19,7 @@
     <ConfigurationType>Application</ConfigurationType>
     <UseDebugLibraries>true</UseDebugLibraries>
     <CharacterSet>MultiByte</CharacterSet>
-    <PlatformToolset>v140</PlatformToolset>
+    <PlatformToolset>v120</PlatformToolset>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="Configuration">
     <ConfigurationType>Application</ConfigurationType>
@@ -71,6 +71,7 @@
     <ClCompile Include="Cilindro.cpp" />
     <ClCompile Include="Coche.cpp" />
     <ClCompile Include="copaDoble.cpp" />
+    <ClCompile Include="CopaSimple.cpp" />
     <ClCompile Include="Cubo.cpp" />
     <ClCompile Include="Disco.cpp" />
     <ClCompile Include="DiscoParcial.cpp" />
@@ -90,6 +91,7 @@
     <ClInclude Include="Cilindro.h" />
     <ClInclude Include="Coche.h" />
     <ClInclude Include="copaDoble.h" />
+    <ClInclude Include="CopaSimple.h" />
     <ClInclude Include="Cubo.h" />
     <ClInclude Include="Disco.h" />
     <ClInclude Include="DiscoParcial.h" />

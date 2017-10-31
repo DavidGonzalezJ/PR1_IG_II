@@ -66,6 +66,9 @@
     <ClCompile Include="Arbol.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="CopaSimple.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Malla.h">
@@ -120,6 +123,9 @@
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="Arbol.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="CopaSimple.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>
