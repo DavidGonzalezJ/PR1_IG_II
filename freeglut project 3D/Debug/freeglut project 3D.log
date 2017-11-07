@@ -1,9 +1,52 @@
-﻿  main.cpp
-c:\users\patricia\documents\universidad\ucm 3\ig ii\pr1_ig_ii\freeglut project 3d\main.cpp(47): warning C4305: 'argumento': truncamiento de 'double' a 'GLfloat'
-c:\users\patricia\documents\universidad\ucm 3\ig ii\pr1_ig_ii\freeglut project 3d\main.cpp(48): warning C4305: 'argumento': truncamiento de 'double' a 'GLfloat'
-c:\users\patricia\documents\universidad\ucm 3\ig ii\pr1_ig_ii\freeglut project 3d\main.cpp(53): warning C4305: 'argumento': truncamiento de 'double' a 'GLfloat'
-c:\users\patricia\documents\universidad\ucm 3\ig ii\pr1_ig_ii\freeglut project 3d\main.cpp(56): warning C4305: 'argumento': truncamiento de 'double' a 'GLfloat'
-c:\users\patricia\documents\universidad\ucm 3\ig ii\pr1_ig_ii\freeglut project 3d\main.cpp(85): warning C4244: '=': conversión de 'int' a 'GLfloat'; posible pérdida de datos
-c:\users\patricia\documents\universidad\ucm 3\ig ii\pr1_ig_ii\freeglut project 3d\main.cpp(90): warning C4305: 'argumento': truncamiento de 'double' a 'GLfloat'
-  freeglut project 3D.vcxproj -> C:\Users\Patricia\Documents\UNIVERSIDAD\UCM 3\IG II\PR1_IG_II\Debug\freeglut project 3D.exe
-  freeglut project 3D.vcxproj -> C:\Users\Patricia\Documents\UNIVERSIDAD\UCM 3\IG II\PR1_IG_II\Debug\freeglut project 3D.pdb (Full PDB)
+﻿Compilación iniciada a las 07/11/2017 12:13:30.
+     1>Proyecto "C:\hlocal\PR1_IG_II\freeglut project 3D\freeglut project 3D.vcxproj" en el nodo 2 (Build destinos).
+     1>ClCompile:
+         C:\software\programacion\MSVStudio2013\VC\bin\CL.exe /c /IC:\hlocal\PR1_IG_II\freeglut\include\ /ZI /nologo /W3 /WX- /Od /Oy- /D _MBCS /Gm /EHsc /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Fo"Debug\\" /Fd"Debug\vc120.pdb" /Gd /TP /analyze- /errorReport:prompt Escena.cpp main.cpp
+         main.cpp
+         Escena.cpp
+     1>c:\hlocal\pr1_ig_ii\freeglut project 3d\objetocuadrico.h(11): warning C4150: eliminación de puntero a tipo 'GLUquadric' incompleto; no se ha llamado a un destructor
+                 c:\program files (x86)\windows kits\8.1\include\um\gl\glu.h(158) : vea la declaración de 'GLUquadric'
+         Generando código...
+       Link:
+         C:\software\programacion\MSVStudio2013\VC\bin\link.exe /ERRORREPORT:PROMPT /OUT:"C:\hlocal\PR1_IG_II\Debug\freeglut project 3D.exe" /INCREMENTAL /NOLOGO /LIBPATH:C:\hlocal\PR1_IG_II\freeglut\lib\ kernel32.lib user32.lib gdi32.lib winspool.lib comdlg32.lib advapi32.lib shell32.lib ole32.lib oleaut32.lib uuid.lib odbc32.lib odbccp32.lib /MANIFEST /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /manifest:embed /DEBUG /PDB:"C:\hlocal\PR1_IG_II\Debug\freeglut project 3D.pdb" /TLBID:1 /DYNAMICBASE /NXCOMPAT /IMPLIB:"C:\hlocal\PR1_IG_II\Debug\freeglut project 3D.lib" /MACHINE:X86 Debug\Arbol.obj
+         Debug\Cara.obj
+         Debug\Cilindro.obj
+         Debug\Coche.obj
+         Debug\copaDoble.obj
+         Debug\CopaSimple.obj
+         Debug\Cubo.obj
+         Debug\Disco.obj
+         Debug\DiscoParcial.obj
+         Debug\Escena.obj
+         Debug\Esfera.obj
+         Debug\main.obj
+         Debug\Malla.obj
+         Debug\ObjetoCompuesto.obj
+         Debug\PuntoVector3D.obj
+         Debug\Quadtree.obj
+         Debug\QuadtreeNode.obj
+         Debug\Rueda.obj
+         Debug\TAfin.obj
+         Debug\VerticeNormal.obj
+     1>VerticeNormal.obj : warning LNK4099: no se encontr¾ PDB 'vc120.pdb' con 'VerticeNormal.obj' o en 'C:\hlocal\PR1_IG_II\Debug\vc120.pdb'; se vincularß el objeto sin tener en cuenta informaci¾n de depuraci¾n
+     1>TAfin.obj : warning LNK4099: no se encontr¾ PDB 'vc120.pdb' con 'TAfin.obj' o en 'C:\hlocal\PR1_IG_II\Debug\vc120.pdb'; se vincularß el objeto sin tener en cuenta informaci¾n de depuraci¾n
+     1>Rueda.obj : warning LNK4099: no se encontr¾ PDB 'vc120.pdb' con 'Rueda.obj' o en 'C:\hlocal\PR1_IG_II\Debug\vc120.pdb'; se vincularß el objeto sin tener en cuenta informaci¾n de depuraci¾n
+     1>PuntoVector3D.obj : warning LNK4099: no se encontr¾ PDB 'vc120.pdb' con 'PuntoVector3D.obj' o en 'C:\hlocal\PR1_IG_II\Debug\vc120.pdb'; se vincularß el objeto sin tener en cuenta informaci¾n de depuraci¾n
+     1>ObjetoCompuesto.obj : warning LNK4099: no se encontr¾ PDB 'vc120.pdb' con 'ObjetoCompuesto.obj' o en 'C:\hlocal\PR1_IG_II\Debug\vc120.pdb'; se vincularß el objeto sin tener en cuenta informaci¾n de depuraci¾n
+     1>Malla.obj : warning LNK4099: no se encontr¾ PDB 'vc120.pdb' con 'Malla.obj' o en 'C:\hlocal\PR1_IG_II\Debug\vc120.pdb'; se vincularß el objeto sin tener en cuenta informaci¾n de depuraci¾n
+     1>Esfera.obj : warning LNK4099: no se encontr¾ PDB 'vc120.pdb' con 'Esfera.obj' o en 'C:\hlocal\PR1_IG_II\Debug\vc120.pdb'; se vincularß el objeto sin tener en cuenta informaci¾n de depuraci¾n
+     1>DiscoParcial.obj : warning LNK4099: no se encontr¾ PDB 'vc120.pdb' con 'DiscoParcial.obj' o en 'C:\hlocal\PR1_IG_II\Debug\vc120.pdb'; se vincularß el objeto sin tener en cuenta informaci¾n de depuraci¾n
+     1>Disco.obj : warning LNK4099: no se encontr¾ PDB 'vc120.pdb' con 'Disco.obj' o en 'C:\hlocal\PR1_IG_II\Debug\vc120.pdb'; se vincularß el objeto sin tener en cuenta informaci¾n de depuraci¾n
+     1>Cubo.obj : warning LNK4099: no se encontr¾ PDB 'vc120.pdb' con 'Cubo.obj' o en 'C:\hlocal\PR1_IG_II\Debug\vc120.pdb'; se vincularß el objeto sin tener en cuenta informaci¾n de depuraci¾n
+     1>CopaSimple.obj : warning LNK4099: no se encontr¾ PDB 'vc120.pdb' con 'CopaSimple.obj' o en 'C:\hlocal\PR1_IG_II\Debug\vc120.pdb'; se vincularß el objeto sin tener en cuenta informaci¾n de depuraci¾n
+     1>copaDoble.obj : warning LNK4099: no se encontr¾ PDB 'vc120.pdb' con 'copaDoble.obj' o en 'C:\hlocal\PR1_IG_II\Debug\vc120.pdb'; se vincularß el objeto sin tener en cuenta informaci¾n de depuraci¾n
+     1>Coche.obj : warning LNK4099: no se encontr¾ PDB 'vc120.pdb' con 'Coche.obj' o en 'C:\hlocal\PR1_IG_II\Debug\vc120.pdb'; se vincularß el objeto sin tener en cuenta informaci¾n de depuraci¾n
+     1>Cilindro.obj : warning LNK4099: no se encontr¾ PDB 'vc120.pdb' con 'Cilindro.obj' o en 'C:\hlocal\PR1_IG_II\Debug\vc120.pdb'; se vincularß el objeto sin tener en cuenta informaci¾n de depuraci¾n
+     1>Cara.obj : warning LNK4099: no se encontr¾ PDB 'vc120.pdb' con 'Cara.obj' o en 'C:\hlocal\PR1_IG_II\Debug\vc120.pdb'; se vincularß el objeto sin tener en cuenta informaci¾n de depuraci¾n
+     1>Arbol.obj : warning LNK4099: no se encontr¾ PDB 'vc120.pdb' con 'Arbol.obj' o en 'C:\hlocal\PR1_IG_II\Debug\vc120.pdb'; se vincularß el objeto sin tener en cuenta informaci¾n de depuraci¾n
+         freeglut project 3D.vcxproj -> C:\hlocal\PR1_IG_II\Debug\freeglut project 3D.exe
+     1>Compilación del proyecto terminada "C:\hlocal\PR1_IG_II\freeglut project 3D\freeglut project 3D.vcxproj" (Build destinos).
+
+Compilación correcta.
+
+Tiempo transcurrido 00:00:01.34

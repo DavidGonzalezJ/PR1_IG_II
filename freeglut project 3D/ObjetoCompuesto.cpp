@@ -3,7 +3,7 @@
 
 ObjetoCompuesto::ObjetoCompuesto()
 {
-	hijos = new Objeto3D*[1000000];
+	hijos = new Objeto3D*[10000];
 	numHijos = 0;
 }
 

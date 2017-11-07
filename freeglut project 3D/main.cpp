@@ -32,6 +32,7 @@ GLfloat giroTecla = 0;
 bool noriaB = false;
 GLUquadricObj* q;
 Escena* escena;
+bool cenital = true;
 
 
 void buildSceneObjects() {	
@@ -43,70 +44,33 @@ void buildSceneObjects() {
 	escena = new Escena();
 }
 
-void aspa(){
-	glColor3f(0.8,0.8,0.8);
-	glScalef(8, 0.3, 0.2);
-	glutSolidCube(1);
-}
-
-void cabina(){
-	glColor3f(0,0.3,0.8);
-	glutSolidCube(1.8);
-	glPushMatrix();
-	glColor3f(0.5, 0.3, 0.8);
-	glTranslated(0, 1, 0);
-	glutSolidCube(0.4);
-	glPopMatrix();
-}
-
-void aspaNoria(){
-
-	glPushMatrix();
-	glRotatef(anguloGiro + giroTecla, 0, 0, 1);
-	glTranslatef(4, 0, 1);
-	aspa();
-	glPopMatrix();
-	glPushMatrix();
-	glRotatef(anguloGiro + giroTecla, 0, 0, 1);
-	glTranslatef(4, 0, -1);
-	aspa();
-	glPopMatrix();
-	glPushMatrix();
-	glRotatef(anguloGiro + giroTecla, 0, 0, 1);
-	glTranslated(8, 0,0);
-	glRotatef(anguloGiro + giroTecla, 0, 0, -1);
-	cabina();
-	glPopMatrix();
-}
-
-void noria(){
-	for (int i = 0; i < 20; i++){
-		glPushMatrix();
-		anguloGiro = 18 * i;
-		aspaNoria();
-		glPopMatrix();
-	
-	}
-	glColor3f(0.5, 0.3, 0); glPushMatrix();
-	glTranslated(0, 0, -1.5);
-	gluCylinder(q, 0.5, 0.5, 3, 20, 20); 
-	gluDisk(q, 0, 0.5, 20, 20);
-	glTranslated(0, 0, 3);
-	gluDisk(q, 0, 0.5, 20, 20);
-	glPopMatrix();
-}
-
 void actualizaCamara() {
-	glMatrixMode(GL_MODELVIEW);
-	glLoadIdentity();
-	PuntoVector3D aux = escena->damePosCoche();
-	eyeX = aux.getX();
-	eyeZ = aux.getZ();
-	lookX = aux.getX();
-	lookZ = aux.getZ();
+	if (cenital){
+		glMatrixMode(GL_MODELVIEW);
+		glLoadIdentity();
+		PuntoVector3D aux = escena->damePosCoche();
+		eyeY = 100.0;
+		lookY = 0.0;
+		upX = -1; upY = 0; upZ = 0;
+		eyeX = aux.getX();
+		eyeZ = aux.getZ();
+		lookX = aux.getX();
+		lookZ = aux.getZ();
+	}
+	else
+	{
+		glMatrixMode(GL_MODELVIEW);
+		glLoadIdentity();
+		PuntoVector3D aux = escena->damePosCoche();
+		eyeX = 100.0; eyeY = 100.0; eyeZ = 100.0;
+		lookX = 0.0; lookY = 0.0; lookZ = 0.0;
+		upX = 0; upY = 1; upZ = 0;
+	}
 
 	gluLookAt(eyeX, eyeY, eyeZ, lookX, lookY, lookZ, upX, upY, upZ);
 }
+
+
 
 void initGL() {	 		 
 	glClearColor(0.6f,0.7f,0.8f,1.0);
@@ -222,6 +186,9 @@ void key(unsigned char key, int x, int y){
 		case 'x': angY=angY-5; break;
 		case 'd': angZ=angZ+5; break;
 		case 'c': angZ=angZ-5; break;
+		case'9': 
+			cenital = !cenital;
+			break;
 
 		case '7': 
 			noriaB = false;

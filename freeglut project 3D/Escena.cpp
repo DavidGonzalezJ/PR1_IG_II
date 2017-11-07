@@ -3,11 +3,16 @@
 #include "Arbol.h"
 #include "CopaSimple.h"
 #include "copaDoble.h"
+#include "Quadtree.h"
 
 #include "Esfera.h"
 #include <iostream>
 
-#define tamBosque 1
+#define tamBosque 40
+
+
+//Global quadtree.
+
 // Tipos de arboles:
 // Copa simple: Roble(Esfera), Abeto(Cono)
 // Copa doble: Alamo(Esfera), Pino(Cono)
@@ -86,8 +91,6 @@ void Escena::creaBosque()
 void Escena::compruebaColision()
 {
 	PuntoVector3D aux = hijos[0]->mt->damePos();
-	//std::cout << aux.getX() << " " << aux.getZ() << "\n";
-	//std::cout << hijos[1]->mt->damePos().getX() << " " << hijos[1]->mt->damePos().getZ() << "\n";
 
 	for (int i = 1; i < numHijos; i++) {
 		if (hijos[i]->activo &&

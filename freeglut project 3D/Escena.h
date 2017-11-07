@@ -11,6 +11,8 @@ public:
 	PuntoVector3D damePosCoche() { return hijos[0]->mt->damePos(); };
 	bool finPartida() { return finalP; };
 private:
+//	Quadtree woodsQuadtree;
+
 	int dameRandom(int min, int max);
 	void creaBosque();
 	void compruebaColision();
@@ -19,4 +21,3 @@ private:
 	int numArboles, numArbRecog;
 	bool finalP;
 };
-
