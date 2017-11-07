@@ -9,8 +9,6 @@
 #include <iostream>
 
 #define tamBosque 40
-
-
 //Global quadtree.
 
 // Tipos de arboles:
@@ -24,11 +22,14 @@ Escena::Escena():numArboles(0), numArbRecog(0), finalP(false)
 	hijos[0]->mt->traslada(new PuntoVector3D(0, 0.5, 0, 0));
 	
 	creaBosque();
+	quadtree = new Quadtree(hijos);
+	quadtree->initialize(tamBosque*4,tamBosque*4,tamBosque*4*2);
 }
 
 
 Escena::~Escena()
 {
+	delete quadtree;
 }
 
 void Escena::mueveCoche(bool dir) {

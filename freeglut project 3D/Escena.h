@@ -1,5 +1,6 @@
 #pragma once
 #include "ObjetoCompuesto.h"
+#include "Quadtree.h"
 class Escena :
 	public ObjetoCompuesto
 {
@@ -20,4 +21,5 @@ private:
 	int colision = 1;
 	int numArboles, numArbRecog;
 	bool finalP;
+	Quadtree* quadtree;
 };
