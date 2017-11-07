@@ -23,5 +23,5 @@ void Quadtree::initialize(float x, float z, float s){
 };
 
 void Quadtree::draw(){
-	header->draw(10,-10,10,-10,coche);
+	header->draw(100,-100,100,-100,coche);
 };

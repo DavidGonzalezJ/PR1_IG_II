@@ -1,9 +1,2 @@
-﻿  QuadtreeNode.cpp
-c:\users\vixad\searches\escritorio\ig2\pr1_ig_ii\freeglut project 3d\quadtreenode.cpp(18): warning C4244: 'argumento' : conversión de 'double' a 'float'; posible pérdida de datos
-c:\users\vixad\searches\escritorio\ig2\pr1_ig_ii\freeglut project 3d\quadtreenode.cpp(20): warning C4244: 'argumento' : conversión de 'double' a 'float'; posible pérdida de datos
-c:\users\vixad\searches\escritorio\ig2\pr1_ig_ii\freeglut project 3d\quadtreenode.cpp(22): warning C4244: 'argumento' : conversión de 'double' a 'float'; posible pérdida de datos
-c:\users\vixad\searches\escritorio\ig2\pr1_ig_ii\freeglut project 3d\quadtreenode.cpp(24): warning C4244: 'argumento' : conversión de 'double' a 'float'; posible pérdida de datos
-c:\users\vixad\searches\escritorio\ig2\pr1_ig_ii\freeglut project 3d\quadtreenode.cpp(33): warning C4018: '<' : no coinciden signed/unsigned
-c:\users\vixad\searches\escritorio\ig2\pr1_ig_ii\freeglut project 3d\quadtreenode.cpp(45): warning C4018: '<' : no coinciden signed/unsigned
-c:\users\vixad\searches\escritorio\ig2\pr1_ig_ii\freeglut project 3d\quadtreenode.cpp(77): warning C4018: '<' : no coinciden signed/unsigned
+﻿  Quadtree.cpp
   freeglut project 3D.vcxproj -> C:\Users\vixad\Searches\Escritorio\IG2\PR1_IG_II\Debug\freeglut project 3D.exe
