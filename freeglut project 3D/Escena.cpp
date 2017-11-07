@@ -22,7 +22,7 @@ Escena::Escena():numArboles(0), numArbRecog(0), finalP(false)
 	hijos[0]->mt->traslada(new PuntoVector3D(0, 0.5, 0, 0));
 	
 	creaBosque();
-	quadtree = new Quadtree(hijos);
+	quadtree = new Quadtree(hijos, static_cast<ObjetoCompuesto*>(hijos[0]),numArboles+1);
 	quadtree->initialize(tamBosque*4,tamBosque*4,tamBosque*4*2);
 }
 
@@ -62,6 +62,17 @@ void Escena::giraCoche(bool right)
 		static_cast<Coche*>(hijos[0])->digievolucion();
 		colision = 2;
 	}
+}
+
+void Escena::dibuja()
+{
+	glColor3f(color->getX(), color->getY(), color->getZ());
+	glMatrixMode(GL_MODELVIEW);
+	glPushMatrix();
+	glMultMatrixf(this->mt->m);
+	hijos[0]->dibuja();
+	quadtree->draw();
+	glPopMatrix();
 }
 
 

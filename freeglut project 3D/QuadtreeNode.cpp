@@ -4,6 +4,7 @@
 
 QuadtreeNode::QuadtreeNode(float x, float z, float s) : SWCornerX(x), SWCornerZ(z), size(s)
 {
+	SWChild = NWChild = SEChild = NEChild = nullptr;
 }
 
 
@@ -29,27 +30,23 @@ void QuadtreeNode::build(std::vector<ObjetoCompuesto*>const & trees){
 
 int QuadtreeNode::numberIntersected(std::vector<ObjetoCompuesto*>const & trees){
 	int numVal = 0;
-	for (int j = 0; j < tamBosque; j++){
-		for (int i = 0; i < tamBosque; i++){
-			if (trees[i][j].activo){
-				if (checkDiscRectangleIntersection(trees[i][j].mt->damePos().getX(),
-					trees[i][j].mt->damePos().getZ()))
+	for (int j = 0; j < trees.size(); j++){
+			if (trees[j]->activo){
+				if (checkDiscRectangleIntersection(trees[j]->mt->damePos().getX(),
+					trees[j]->mt->damePos().getZ()))
 					numVal++;
 			}
 		}
-	}
 	return numVal;
 }
 
 
 void QuadtreeNode::addIntersectingToList(std::vector<ObjetoCompuesto*>const & trees){
-	for (int j = 0; j < tamBosque; j++){
-		for (int i = 0; i < tamBosque; i++){
-			if (trees[i][j].activo){
-				if (checkDiscRectangleIntersection(trees[i][j].mt->damePos().getX(),
-					trees[i][j].mt->damePos().getZ()))
-					treesInNode.push_back(&trees[i][j]);
-			}
+	for (int j = 0; j < trees.size(); j++){
+		if (trees[j]->activo){
+				if (checkDiscRectangleIntersection(trees[j]->mt->damePos().getX(),
+					trees[j]->mt->damePos().getZ()))
+					treesInNode.push_back(trees[j]);
 		}
 	}
 }
@@ -59,31 +56,21 @@ bool QuadtreeNode::checkDiscRectangleIntersection(float coorX, float coorZ){
 		coorX > SWCornerX - size && coorZ > SWCornerZ -size;
 }
 
-void QuadtreeNode::checkQuadrilateralsIntersection(
-	float x1, float z1,
-	float x2, float z2,
-	float x3, float z3,
-	float x4, float z4,
-	float X, float SWCornerZ, float SWCornerX, float difSWCornerZ,
-	float sumaSWCornerX, float dif2SWCornerZ, float sum2SWCornerX, float SWCornerZ2){
-
-
-
-
+bool QuadtreeNode::checkQuadrilateralsIntersection(GLdouble top, GLdouble bot, GLdouble right, GLdouble left, ObjetoCompuesto* coche){
+	//Calculamos el centro del nodo
+	/*GLdouble centroX, centroZ;
+	centroX = SWCornerX - size / 2;
+	centroZ = SWCornerZ - size / 2;
+	if(centroX > coche->mt->damePos().getX() - top && centroX < coche->mt->damePos().getX() - bot &&
+		centroZ < coche->mt->damePos().getZ() + right && centroZ > coche->mt->damePos().getZ() + left)
+		return true;
+	else return false;*/
+	return true;
 }
 
-void QuadtreeNode::draw(float x1, float z1,float x2, float z2,float x3, float z3,float x4, float z4){
-//If the square does not intersect the frustum do nothing.
-	if (checkQuadrilateralsIntersection(x1, z1, x2, z2, x3, z3, x4, z4,
-
-		SWCornerX,
-		SWCornerZ, 
-		SWCornerX, 
-		SWCornerZ - size,
-		SWCornerX + size,
-		SWCornerZ - size,
-		SWCornerX + size, 
-		SWCornerZ)) {
+void QuadtreeNode::draw(GLdouble top, GLdouble bot, GLdouble right, GLdouble left, ObjetoCompuesto* coche) {
+	//If the square does not intersect the frustum do nothing.
+	if (checkQuadrilateralsIntersection(top, bot, right, left, coche)) {
 
 		if (SWChild == nullptr) { //Square is leaf.
 			//Draw all the trees of this node
@@ -91,10 +78,10 @@ void QuadtreeNode::draw(float x1, float z1,float x2, float z2,float x3, float z3
 				treesInNode[i]->dibuja();
 		}
 		else {
-			SWChild->draw(x1, z1, x2, z2, x3, z3, x4, z4);
-			NWChild->draw(x1, z1, x2, z2, x3, z3, x4, z4);
-			NEChild->draw(x1, z1, x2, z2, x3, z3, x4, z4);
-			SEChild->draw(x1, z1, x2, z2, x3, z3, x4, z4);
+			SWChild->draw(top, bot, right, left, coche);
+			NWChild->draw(top, bot, right, left, coche);
+			NEChild->draw(top, bot, right, left, coche);
+			SEChild->draw(top, bot, right, left, coche);
 		}
 	}
 }

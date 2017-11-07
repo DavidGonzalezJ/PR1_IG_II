@@ -11,6 +11,7 @@ public:
 	void giraCoche(bool right);
 	PuntoVector3D damePosCoche() { return hijos[0]->mt->damePos(); };
 	bool finPartida() { return finalP; };
+	virtual void dibuja();
 private:
 //	Quadtree woodsQuadtree;
 
