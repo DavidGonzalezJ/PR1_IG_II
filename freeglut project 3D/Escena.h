@@ -13,7 +13,6 @@ public:
 	bool finPartida() { return finalP; };
 	virtual void dibuja();
 private:
-//	Quadtree woodsQuadtree;
 
 	int dameRandom(int min, int max);
 	void creaBosque();

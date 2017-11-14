@@ -69,6 +69,7 @@ bool QuadtreeNode::checkQuadrilateralsIntersection(GLdouble top, GLdouble bot, G
 	esqNE.posX = SWCornerX - size; esqNE.posZ = SWCornerZ - size;
 	esqSE.posX = SWCornerX; esqSE.posZ = SWCornerZ - size;
 	centro.posX = SWCornerX - size / 2.0; centro.posZ = SWCornerZ - size / 2.0;
+	//Miramos que las esquinas del nodo o el centro estén dentro del frustum
 	if(((esqSW.posX > coche->mt->damePos().getX() - top && esqSW.posX < coche->mt->damePos().getX() - bot &&
 		esqSW.posZ < coche->mt->damePos().getZ() + right && esqSW.posZ > coche->mt->damePos().getZ() + left)
 		|| (esqNW.posX > coche->mt->damePos().getX() - top && esqNW.posX < coche->mt->damePos().getX() - bot &&
@@ -79,20 +80,14 @@ bool QuadtreeNode::checkQuadrilateralsIntersection(GLdouble top, GLdouble bot, G
 		esqNE.posZ < coche->mt->damePos().getZ() + right && esqNE.posZ > coche->mt->damePos().getZ() + left)
 		|| (centro.posX > coche->mt->damePos().getX() - top && centro.posX < coche->mt->damePos().getX() - bot &&
 			centro.posZ < coche->mt->damePos().getZ() + right && centro.posZ > coche->mt->damePos().getZ() + left))
-
-		|| ((esqSW.posX < coche->mt->damePos().getX() - top && esqSW.posX > coche->mt->damePos().getX() - bot &&
-		esqSW.posZ > coche->mt->damePos().getZ() + right && esqSW.posZ < coche->mt->damePos().getZ() + left)
-		|| (esqNW.posX < coche->mt->damePos().getX() - top && esqNW.posX > coche->mt->damePos().getX() - bot &&
-		esqNW.posZ > coche->mt->damePos().getZ() + right && esqNW.posZ < coche->mt->damePos().getZ() + left)
-		|| (esqSE.posX < coche->mt->damePos().getX() - top && esqSE.posX > coche->mt->damePos().getX() - bot &&
-		esqSE.posZ > coche->mt->damePos().getZ() + right && esqSE.posZ < coche->mt->damePos().getZ() + left)
-		|| (esqNE.posX < coche->mt->damePos().getX() - top && esqNE.posX > coche->mt->damePos().getX() - bot &&
-		esqNE.posZ > coche->mt->damePos().getZ() + right && esqNE.posZ < coche->mt->damePos().getZ() + left)
-		|| (centro.posX < coche->mt->damePos().getX() - top && centro.posX > coche->mt->damePos().getX() - bot &&
-			centro.posZ > coche->mt->damePos().getZ() + right && centro.posZ < coche->mt->damePos().getZ() + left)))
+		//Miramos que el centro del frustum esté dentro del nodo
+		|| (esqSW.posX > coche->mt->damePos().getX() && esqSW.posZ > coche->mt->damePos().getZ() &&
+			esqNW.posX < coche->mt->damePos().getX() && esqNW.posZ > coche->mt->damePos().getZ() &&
+			esqNE.posX < coche->mt->damePos().getX() && esqNE.posZ < coche->mt->damePos().getZ() &&
+			esqSE.posX > coche->mt->damePos().getX() && esqSE.posZ < coche->mt->damePos().getZ()))
 		return true;
 	else return false;
-	//return true;
+	return true;
 }
 
 void QuadtreeNode::draw(GLdouble top, GLdouble bot, GLdouble right, GLdouble left, ObjetoCompuesto* coche) {

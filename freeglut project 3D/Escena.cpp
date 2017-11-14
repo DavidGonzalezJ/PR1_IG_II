@@ -9,7 +9,6 @@
 #include <iostream>
 
 #define tamBosque 40
-//Global quadtree.
 
 // Tipos de arboles:
 // Copa simple: Roble(Esfera), Abeto(Cono)

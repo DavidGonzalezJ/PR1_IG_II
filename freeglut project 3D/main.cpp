@@ -1,3 +1,6 @@
+//Patricia Cabrero
+//David González
+
 #include <Windows.h>
 #include <gl/GL.h>
 #include <gl/GLU.h>
@@ -208,7 +211,12 @@ void key(unsigned char key, int x, int y){
 		case 'l':
 			if (!escena->finPartida())
 				escena->giraCoche(true); break;
-
+		case 'y':
+			if (!escena->finPartida())
+				escena->giraCoche(true); escena->mueveCoche(true); break;
+		case 't':
+			if (!escena->finPartida())
+				escena->giraCoche(false); escena->mueveCoche(true); break;
 		default:
 			need_redisplay = false;
 			break;
@@ -224,6 +232,7 @@ int main(int argc, char *argv[]){
 	cout<< "Starting console..." << endl;
 	cout << "Para mover el coche: \nDelante: i \nAtras: k" << endl;
 	cout << "Para girar el coche: \nDerecha: l \nIzquierda: j" << endl;
+	cout << "Para mover el coche con giros: \nDerecha: y \nIzquierda: t" << endl;
 	cout << "-----" << endl;
 
 	int my_window; // my window's identifier
